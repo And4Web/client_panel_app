@@ -22,9 +22,16 @@ const firebaseConfig = {
 };
 
 //react-redux-firebase config
-// const rrfConfig = {
-//   userProfile: "users",
-//   useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
+const rrfConfig = {
+  userProfile: "users",
+  useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
+};
+
+// const rrfProps = {
+//   firebase,
+//   config: rrfConfig,
+//   dispatch: store.dispatch,
+//   // createFirestoreInstance // <- needed if using firestore
 // };
 
 //Init firebase instance

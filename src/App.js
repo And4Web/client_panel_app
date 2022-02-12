@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AppNavbar from "../src/components/layouts/AppNavbar";
 import DashBoard from "../src/components/layouts/DashBoard";
 
-import { Provider } from "react-redux";
+import { Provider, ReactReduxFirebaseProvider } from "react-redux";
 import store from "./store";
 
 function App() {
