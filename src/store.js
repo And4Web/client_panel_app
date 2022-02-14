@@ -1,8 +1,12 @@
 import { createStore, combineReducers, compose } from "redux";
 // import firebase from "firebase";
 // import "firebase/firestore";
-import { reactReduxFirebase, firebaseReducer } from "react-redux-firebase";
-import { reduxFirestore, firestoreReducer } from "redux-firestore";
+import {
+  reactReduxFirebaseProvider,
+  firebaseReducer,
+} from "react-redux-firebase";
+import { firestoreReducer } from "redux-firestore";
+//reduxFirestore,
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
@@ -22,16 +26,16 @@ const firebaseConfig = {
 };
 
 //react-redux-firebase config
-const rrfConfig = {
-  userProfile: "users",
-  useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
-};
+// const rrfConfig = {
+//   userProfile: "users",
+//   useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
+// };
 
 // const rrfProps = {
 //   firebase,
 //   config: rrfConfig,
 //   dispatch: store.dispatch,
-//   // createFirestoreInstance // <- needed if using firestore
+//   // createFirestoreInstance, // <- needed if using firestore
 // };
 
 //Init firebase instance
@@ -52,7 +56,7 @@ const store = createStore(
   rootReducer,
   initialState,
   compose(
-    reactReduxFirebase(firebase),
+    reactReduxFirebaseProvider(firebase),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
