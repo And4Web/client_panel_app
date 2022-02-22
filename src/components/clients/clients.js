@@ -27,6 +27,7 @@ class Clients extends Component {
               <tr>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Phone</th>
                 <th>Balance</th>
               </tr>
             </thead>
@@ -37,6 +38,7 @@ class Clients extends Component {
                     {client.firstName} {client.lastName}
                   </td>
                   <td>{client.email}</td>
+                  <td>{client.phone}</td>
                   <td>${parseFloat(client.balance).toFixed(2)}</td>
                   <Link
                     to={`/client/${client.id}`}
